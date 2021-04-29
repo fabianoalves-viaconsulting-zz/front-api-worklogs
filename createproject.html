@@ -8,8 +8,9 @@
         <form id="form" action="https://jira-manager-api-labs.viadev.io/xxx" method="post"></form>
         <center>   <h1>Create Project</h1> </center> <br>
         <center>
+            <b>Lead_id</b>:     <input type="text" id="lead_id" name="lead_id" placeholder="Type a name for project"><br>
             <b>Client</b>:           <input type="text" id="client" name="client" placeholder="Insert the name of the Client"><br>
-            <b>Project Name</b>:     <input type="text" id="project" name="project" placeholder="Type a name for project"><br>
+            <b>Project </b>:     <input type="text" id="project" name="project" placeholder="Type a name for project"><br>
             <input id="submit" type="button" name="submit" value="submit">
         </center>
         </form>    
@@ -17,7 +18,7 @@
         <script>
             $(document).ready(function(){
               $("#submit").on('click', function(){
-                  var data = {client: $("#client").val(), project: $("#project").val()};
+                  var data = {lead_id: $("#lead_id").val(), client: $("#client").val(), project: $("#project").val()};
                   console.log(typeof JSON.stringify(data))
                   var settings = {
                   "url": "https://jira-manager-api-labs.viadev.io/xxx",
