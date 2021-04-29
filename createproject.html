@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/@atlaskit/css-reset@2.0.0/dist/bundle.css" media="all">
+        <script type="text/javascript" src="https://connect-cdn.atl-paas.net/all.js"></script>
+    </head>
+    <body>
+        <form id="form" action="https://jira-manager-api-labs.viadev.io/xxx" method="post"></form>
+        <center>   <h1>Create Project</h1> </center> <br>
+        <center>
+            <b>Client</b>:           <input type="text" id="client" name="client" placeholder="Insert the name of the Client"><br>
+            <b>Project Name</b>:     <input type="text" id="project" name="project" placeholder="Type a name for project"><br>
+            <input id="submit" type="button" name="submit" value="submit">
+        </center>
+        </form>    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+              $("#submit").on('click', function(){
+                  var data = {client: $("#client").val(), project: $("#project").val()};
+                  console.log(typeof JSON.stringify(data))
+                  var settings = {
+                  "url": "https://jira-manager-api-labs.viadev.io/xxx",
+                  "method": "POST",
+                  "timeout": 0,
+                  "headers": {
+                    "Content-Type": "text/plain"
+                  },
+                  "data": JSON.stringify(data),
+                };
+                $.ajax(settings).done(function (response) {
+                  console.log(response);
+                });
+              });
+            });
+        </script>
+    </body>
+</html>
