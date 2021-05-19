@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  
+  install:
+    runtime-versions:
+      python: 3.8      
+
+  build:
+    commands:
+
+      ### CloudFormation Package and Deploy ###################################
+      - aws s3 cp s3://${INFRA_BUCKET}/artifacts/devops-api/cfstack-package-deploy_v1.sh ./; bash cfstack-package-deploy_v1.sh
