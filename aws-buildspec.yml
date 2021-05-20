@@ -9,5 +9,9 @@ phases:
   build:
     commands:
 
+      ### Python Install Requirements #########################################
+      - pip install -U -r functions/process/requirements.txt -t functions/process
+      - pip install -U -r functions/receiver/requirements.txt -t functions/receiver
+
       ### CloudFormation Package and Deploy ###################################
       - aws s3 cp s3://${INFRA_BUCKET}/artifacts/devops-api/cfstack-package-deploy_v1.sh ./; bash cfstack-package-deploy_v1.sh
