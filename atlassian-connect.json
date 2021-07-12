@@ -2,7 +2,7 @@
     "name": "Create Project",
     "description": "Atlassian Connect app",
     "key": "com.example.myapp",
-    "baseUrl": "https://5f6b8d8360f5.ngrok.io",
+    "baseUrl": "http://jira-manager-webapp.viadev.io.s3-website-us-east-1.amazonaws.com",
     "vendor": {
         "name": "Fabiano Alves",
         "url": "jira.viaconsulting.com.br"
